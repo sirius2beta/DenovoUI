@@ -1,17 +1,22 @@
+
+
 /*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML. If you edit
 this file manually, you might introduce QML code that is not supported by Qt Design Studio.
 Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
 */
-
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 Button {
     id: control
-    width: 80
-    height: 80
+
+    property bool showIcon: false
+    property string iconSource: ""
+
+    width: 75
+    height: 25
 
     implicitWidth: Math.max(
                        buttonBackground ? buttonBackground.implicitWidth : 0,
@@ -23,59 +28,39 @@ Button {
     rightPadding: 4
 
     text: "My Button"
-    highlighted: false
-    property string imgsrc: ""
+    icon.source: iconSource
 
     background: buttonBackground
     Rectangle {
         id: buttonBackground
-        color: "#00000000"
+        color: "#444444"
         implicitWidth: 100
         implicitHeight: 40
         opacity: enabled ? 1 : 0.3
         radius: 2
-        border.color: "#ffffff"
+        border.color: "#aaaaaa"
+    }
+    Image {
+        visible: showIcon
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.topMargin: 2
+        anchors.bottomMargin: 4
+        source: icon.source
+        anchors.horizontalCenter: parent.horizontalCenter
+        fillMode: Image.PreserveAspectFit
     }
 
     contentItem: textItem
     Text {
         id: textItem
-        x: 4
-        y: 45
-        width: 72
-        height: 29
-        text: ""
-
-        opacity: enabled ? 1.0 : 0.3
-        color: "#00047eff"
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-    }
-    Text{
-        id: text2
-        y: 57
-        width: 72
-        height: 23
         text: control.text
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 0
 
         opacity: enabled ? 1.0 : 0.3
         color: "#ffffff"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
-
-    Image {
-        id: winch
-        width: 50
-        height: 50
-        anchors.top: parent.top
-        anchors.topMargin: 4
-        source: imgsrc
-        anchors.horizontalCenter: parent.horizontalCenter
-        fillMode: Image.PreserveAspectFit
+        font.pointSize: 12
     }
 
     states: [
@@ -85,12 +70,12 @@ Button {
 
             PropertyChanges {
                 target: buttonBackground
-                color: "#00000000"
-                border.color: "#ffffff"
+                color: "#555555"
+                border.color: "#aaaaaa"
             }
 
             PropertyChanges {
-                target: text2
+                target: textItem
                 color: "#ffffff"
             }
         },
@@ -98,14 +83,14 @@ Button {
             name: "down"
             when: control.down
             PropertyChanges {
-                target: text2
+                target: textItem
                 color: "#ffffff"
             }
 
             PropertyChanges {
                 target: buttonBackground
-                color: "#888888"
-                border.color: "#00000000"
+                color: "#444444"
+                border.color: "#999999"
             }
         }
     ]

@@ -50,7 +50,7 @@ Window {
         anchors.top: parent.top
         anchors.left: statusView.right
         anchors.right: controlView.left
-        anchors.bottom: statusView.top
+        anchors.bottom: statusBar.top
 
     }
 

@@ -1,19 +1,15 @@
-
-
 /*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML. If you edit
 this file manually, you might introduce QML code that is not supported by Qt Design Studio.
 Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
 */
+
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 Button {
     id: control
-
-    width: 75
-    height: 25
 
     implicitWidth: Math.max(
                        buttonBackground ? buttonBackground.implicitWidth : 0,
@@ -25,26 +21,16 @@ Button {
     rightPadding: 4
 
     text: "My Button"
-    icon.source: "images/power.png"
 
     background: buttonBackground
     Rectangle {
         id: buttonBackground
-        color: "#444444"
+        color: "#ffffff"
         implicitWidth: 100
         implicitHeight: 40
         opacity: enabled ? 1 : 0.3
         radius: 2
-        border.color: "#aaaaaa"
-    }
-    Image {
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.topMargin: 2
-        anchors.bottomMargin: 4
-        source: icon.source
-        anchors.horizontalCenter: parent.horizontalCenter
-        fillMode: Image.PreserveAspectFit
+        border.color: "#047eff"
     }
 
     contentItem: textItem
@@ -53,10 +39,9 @@ Button {
         text: control.text
 
         opacity: enabled ? 1.0 : 0.3
-        color: "#ffffff"
+        color: "#047eff"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        font.pointSize: 12
     }
 
     states: [
@@ -66,13 +51,13 @@ Button {
 
             PropertyChanges {
                 target: buttonBackground
-                color: "#555555"
-                border.color: "#aaaaaa"
+                color: "#00000000"
+                border.color: "#047eff"
             }
 
             PropertyChanges {
                 target: textItem
-                color: "#ffffff"
+                color: "#047eff"
             }
         },
         State {
@@ -85,8 +70,8 @@ Button {
 
             PropertyChanges {
                 target: buttonBackground
-                color: "#444444"
-                border.color: "#999999"
+                color: "#047eff"
+                border.color: "#00000000"
             }
         }
     ]

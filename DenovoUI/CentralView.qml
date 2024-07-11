@@ -5,10 +5,27 @@ Item {
     id: root
     width: 1920
     height: 1080
+
     Rectangle{
-        anchors.fill: parent
         color: DNConstants.bg_deep_dark
+        anchors.fill: parent
         border.color: "#565656"
 
     }
+
+    HUD{
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.leftMargin: 0
+        anchors.rightMargin: 0
+
+    }
+
+    VideoView{
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+
+    }
+
 }

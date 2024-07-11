@@ -83,6 +83,7 @@ Item {
                         Rectangle{
                             width: 5
                             height: 14
+                            color: "#ff0000"
 
                         }
                         Text {
@@ -107,6 +108,7 @@ Item {
                         Rectangle{
                             width: 5
                             height: 14
+                            color: "#ff0000"
 
                         }
                         Text {
@@ -147,11 +149,11 @@ Item {
                 Layout.fillHeight: true
                 DNButton {
                     id: dNButton2
-
+                    showIcon: true
                     width: 46
                     height: 25
                     icon.color: "#ffffff"
-                    icon.source: "images/power.png"
+                    icon.source: "images/settings.svg"
                     text:""
                     anchors.right: parent.right
                     anchors.bottom: parent.bottom
@@ -170,6 +172,7 @@ Item {
                     width: 46
                     height: 25
                     icon.color: "#ffffff"
+                    showIcon: true
                     icon.source: "images/power.png"
                     text:""
                     anchors.right: parent.right
