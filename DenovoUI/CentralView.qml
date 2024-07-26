@@ -7,7 +7,7 @@ Item {
     height: 1080
 
     Rectangle{
-        color: DNConstants.bg_deep_dark
+        color: "#1a1a1c"
         anchors.fill: parent
         border.color: "#565656"
 

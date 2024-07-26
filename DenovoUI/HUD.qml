@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Layouts
+import QtQuick.Layouts 1.15
 
 Item {
     id: root
@@ -9,9 +9,8 @@ Item {
     Rectangle{
         id: rectangle3
         anchors.fill: parent
-        color: DNConstants.bg_deep_dark
-        border.color: DNConstants.bd_regular
-
+        color: "#1a1a1c"
+        border.color: "#565656"
 
 
 

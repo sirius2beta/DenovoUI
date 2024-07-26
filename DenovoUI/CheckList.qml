@@ -12,7 +12,7 @@ Item {
         anchors.rightMargin: 0
         anchors.topMargin: 0
         anchors.bottomMargin: 0
-        color: DNConstants.bg_deep_dark
+        color: "#1a1a1c"
         border.color: "#565656"
 
 

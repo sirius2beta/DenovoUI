@@ -10,7 +10,7 @@ Item {
     Rectangle{
         id: rectangle
         anchors.fill: parent
-        color: DNConstants.bg_deep_dark
+        color: "#1a1a1c"
         border.color: "#565656"
 
         Text {

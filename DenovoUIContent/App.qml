@@ -14,7 +14,7 @@ Window {
 
     Rectangle{
         anchors.fill: parent
-        color: DNConstants.bg_deep_dark
+        color: DNConst.bg_deep_dark
 
     }
 

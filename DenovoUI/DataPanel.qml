@@ -11,7 +11,7 @@ Item {
     property int tabIndex: 0
     Rectangle{
         id:background
-        color: DNConstants.bg_deep_dark
+        color: "#1a1a1c"
         anchors.fill: parent
         border.color: "#565656"
     }

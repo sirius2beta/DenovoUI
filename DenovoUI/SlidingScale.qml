@@ -139,7 +139,7 @@ Item {
         height: 37
         anchors.top: parent.top
         anchors.topMargin: -2
-        source: "../../../DenovoUI/DenovoUI/images/headingBox.png"
+        source: "images/headingBox.png"
         anchors.horizontalCenter: parent.horizontalCenter
         scale: 0.8
         Text {

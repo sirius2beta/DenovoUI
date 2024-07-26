@@ -7,7 +7,7 @@ Item {
     height: 480
     property int rollAngle: 0
     Rectangle{
-        color: DNConstants.bg_deep_dark
+        color: "#1a1a1c"
         anchors.fill: parent
 
     }

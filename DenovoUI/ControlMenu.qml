@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Layouts
+import QtQuick.Layouts 1.15
 
 Item {
     id: root
@@ -15,7 +15,7 @@ Item {
         Rectangle{
             width: 200
             height: 350
-            color: DNConstants.bg_deep_dark
+            color: "#1a1a1c"
             border.color: "#565656"
             Column{
                 anchors.top: parent.top

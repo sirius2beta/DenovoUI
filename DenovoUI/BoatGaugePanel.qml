@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Layouts
+import QtQuick.Layouts 1.15
 
 Item {
     id: root
@@ -107,7 +107,7 @@ Item {
             id: rectangle
             Layout.fillWidth: true
             height: 220
-            color: DNConstants.bg_deep_dark
+            color: "#1a1a1c"
             Layout.preferredHeight: 250
             Layout.margins: 4
             Column{
@@ -117,7 +117,7 @@ Item {
 
                     Rectangle{
                         id: rectangle1
-                        color: DNConstants.bg_deep_dark
+                        color: "#1a1a1c"
                         Layout.fillHeight: true
                         Layout.fillWidth: true
                         RowLayout{
