@@ -7,6 +7,8 @@ Item {
     id: root
     width: 200
     height: 364
+
+    property int tabIndex: 0
     Rectangle{
         id:background
         color: DNConstants.bg_deep_dark
@@ -16,9 +18,9 @@ Item {
     Row{
         id: tab
         Rectangle{
-            width: 40
-            height: 20
-            color: "#209fbc"
+            width: 50
+            height: 30
+            color: tabIndex == 0?"#209fbc":"#666666"
             border.color: "#ffffff"
             Text{
                 color: "#ffffff"
@@ -28,12 +30,18 @@ Item {
                 verticalAlignment: Text.AlignVCenter
                 font.pointSize: 12
             }
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    tabIndex = 0;
+                }
+            }
 
         }
         Rectangle{
-            width: 40
-            height: 20
-            color: "#209fbc"
+            width: 50
+            height: 30
+            color: tabIndex == 1?"#209fbc":"#666666"
             border.color: "#ffffff"
             Text{
                 color: "#ffffff"
@@ -42,6 +50,12 @@ Item {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.pointSize: 12
+            }
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    tabIndex = 1;
+                }
             }
 
         }

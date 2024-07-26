@@ -35,7 +35,7 @@ Item {
     }
 
     BoatGaugePanel{
-        anchors.top: boatStatusPanel.bottom
+        anchors.top: swipeView.bottom
         anchors.bottom: parent.bottom
         anchors.topMargin: 0
         anchors.bottomMargin: 0

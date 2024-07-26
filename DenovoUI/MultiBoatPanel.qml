@@ -58,62 +58,76 @@ Item {
                     anchors.topMargin: 0
                     Row{
                         id: row1
-                                spacing:5
-                                Column{
-                                    leftPadding: 5
-                                    spacing: 3
-                                    Text {
-                                        width: 100
-                                        color: "#ffffff"
-                                        text: boatname
-                                        font.pointSize: 16
-                                    }
-                                    Row{
-                                        id: row
-                                        spacing: 5
-                                        Rectangle{
-                                            width: 5
-                                            height: 5
-                                            anchors.verticalCenter: parent.verticalCenter
-
-                                        }
-
-                                        Text {
-                                            width: 100
-                                            color: "#ffffff"
-                                            text: PIP
-                                        }
-                                    }
-
-                                    Row{
-                                        id: row2
-                                        spacing: 5
-                                        Rectangle{
-                                            width: 5
-                                            height: 5
-                                            anchors.verticalCenter: parent.verticalCenter
-
-                                        }
-
-                                        Text {
-                                            width: 100
-                                            color: "#ffffff"
-                                            text: SIP
-                                        }
-                                    }
-
+                        spacing:5
+                        Column{
+                            leftPadding: 5
+                            spacing: 3
+                            Text {
+                                width: 100
+                                color: "#ffffff"
+                                text: boatname
+                                font.pointSize: 16
+                            }
+                            Row{
+                                id: row
+                                spacing: 5
+                                Rectangle{
+                                    width: 5
+                                    height: 5
+                                    anchors.verticalCenter: parent.verticalCenter
 
                                 }
-                                Image {
-                                    id: more_vert_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24
-                                    width: 20
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    source: "images/vOption.svg"
-                                    sourceSize.width: 27
-                                    fillMode: Image.PreserveAspectCrop
+
+                                Text {
+                                    width: 100
+                                    color: "#ffffff"
+                                    text: PIP
                                 }
                             }
 
+                            Row{
+                                id: row2
+                                spacing: 5
+                                Rectangle{
+                                    width: 5
+                                    height: 5
+                                    anchors.verticalCenter: parent.verticalCenter
+
+                                }
+
+                                Text {
+                                    width: 100
+                                    color: "#ffffff"
+                                    text: SIP
+                                }
+                            }
+
+
+                        }
+                    }
+                    Column{
+                        DNButton {
+                            text: "Del"
+                            height: 20
+                            width:30
+                            bgColor: "#990000"
+                            iconSource: "images/add.svg"
+                        }
+                        DNButton {
+                            text: "A"
+                            height: 20
+                            width:30
+                            bgColor: "#009900"
+                            iconSource: "images/add.svg"
+                        }
+                        DNButton {
+                            showIcon: true
+                            text: ""
+                            height: 20
+                            width:30
+                            iconSource: "images/settings.svg"
+                        }
+                    }
 
 
                 }

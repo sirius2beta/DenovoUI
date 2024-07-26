@@ -21,18 +21,34 @@ Item {
         anchors.rightMargin: 4
         anchors.topMargin: 5
         spacing: 2
-        Text{
-            color: "#ffffff"
-            text: "CABIN"
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
-        }
         Rectangle{
-            height: 1
-            color: "#9d9d9d"
+            height:20
+            color: "#5b5b62"
+            Layout.preferredHeight: 20
             Layout.fillWidth: true
+            Text {
+                anchors.fill: parent
+                color: "#ffffff"
+
+                text: qsTr("CABIN")
+                font.pixelSize: 12
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+
+            }
+            Rectangle{
+                anchors.bottom: parent.bottom
+                height: 1
+                width: parent.width
+                color: "#9d9d9d"
+
+            }
 
         }
+
+
         ValueBar{
             title: "temperature"
             value: 25
@@ -59,82 +75,94 @@ Item {
 
 
         }
+
         Rectangle{
-            height: 1
-            color: "#7c7c7c"
+            height:20
+            color: "#5b5b62"
+            Layout.preferredHeight: 20
             Layout.fillWidth: true
+            Text {
+                anchors.fill: parent
+                id: text1
+                color: "#ffffff"
+
+                text: qsTr("BAT")
+                font.pixelSize: 12
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+
+            }
+            Rectangle{
+                anchors.bottom: parent.bottom
+                height: 1
+                width: parent.width
+                color: "#9d9d9d"
+
+            }
 
         }
+
         Rectangle{
             id: rectangle
             Layout.fillWidth: true
-            height: 140
-            color: "#00ffffff"
+            height: 220
+            color: DNConstants.bg_deep_dark
+            Layout.preferredHeight: 250
             Layout.margins: 4
+            Column{
+                ColumnLayout{
+                    width:160
+                    height:120
 
-            ColumnLayout{
-                anchors.fill: parent
-                Text {
-                    id: text1
-                    color: "#ffffff"
-
-                    text: qsTr("BAT")
-                    font.pixelSize: 12
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-
-                }
-                Rectangle{
-                    height: 1
-                    color: "#9d9d9d"
-                    Layout.fillWidth: true
-
-                }
-                Rectangle{
-                    id: rectangle1
-                    color: DNConstants.bg_deep_dark
-                    Layout.fillHeight: true
-                    Layout.fillWidth: true
-                    RowLayout{
-                        height: 100
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        spacing: 10
-                        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                    Rectangle{
+                        id: rectangle1
+                        color: DNConstants.bg_deep_dark
+                        Layout.fillHeight: true
                         Layout.fillWidth: true
-                        BatteryBar{
+                        RowLayout{
+                            height: 100
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            spacing: 10
                             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                            noBattery: false
-
-                        }
-
-                        ColumnLayout{
-                            Layout.fillWidth: false
-                            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                            Text {
-                                id: text2
-                                color: "#ffffff"
-
-                                text: qsTr("20.0 V")
-                                font.pixelSize: 14
-                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                            Layout.fillWidth: true
+                            BatteryBar{
+                                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                                noBattery: false
 
                             }
-                            Text {
-                                id: text3
-                                color: "#ffffff"
 
-                                text: qsTr("2.0 A")
-                                font.pixelSize: 14
-                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                            ColumnLayout{
+                                Layout.fillWidth: false
+                                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                                Text {
+                                    id: text2
+                                    color: "#ffffff"
 
-                            }
-                            Text {
-                                id: text4
-                                color: "#ffffff"
+                                    text: qsTr("20.0 V")
+                                    font.pixelSize: 14
+                                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
-                                text: qsTr("80 %")
-                                font.pixelSize: 14
-                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                                }
+                                Text {
+                                    id: text3
+                                    color: "#ffffff"
+
+                                    text: qsTr("2.0 A")
+                                    font.pixelSize: 14
+                                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+
+                                }
+                                Text {
+                                    id: text4
+                                    color: "#ffffff"
+
+                                    text: qsTr("80 %")
+                                    font.pixelSize: 14
+                                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+
+                                }
 
                             }
 
@@ -142,31 +170,30 @@ Item {
 
                     }
 
+
+                }
+                RowLayout{
+                    width:160
+
+                    BatteryBar{
+                        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                        percentage: 80
+                        noBattery: false
+                    }
+                    BatteryBar{
+                        percentage: 40
+                    }
+                    BatteryBar{
+
+                    }
+                    BatteryBar{
+
+                    }
                 }
 
-
             }
 
-        }
-        RowLayout{
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-            Layout.fillWidth: true
 
-
-            BatteryBar{
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                percentage: 80
-                noBattery: false
-            }
-            BatteryBar{
-                percentage: 40
-            }
-            BatteryBar{
-
-            }
-            BatteryBar{
-
-            }
         }
         Rectangle{
             color: "#00ffffff"
@@ -174,6 +201,8 @@ Item {
             Layout.fillWidth: true
 
         }
+
+
     }
 
 

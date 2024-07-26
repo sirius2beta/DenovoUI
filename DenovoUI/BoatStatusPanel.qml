@@ -113,7 +113,7 @@ Item {
                         }
                         Text {
                             color: "#1dd83b"
-                            text: qsTr("P")
+                            text: qsTr("S")
                             font.pixelSize: 12
                         }
                         Text {

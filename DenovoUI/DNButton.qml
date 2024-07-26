@@ -14,6 +14,7 @@ Button {
 
     property bool showIcon: false
     property string iconSource: ""
+    property string bgColor: "#444444"
 
     width: 75
     height: 25
@@ -33,7 +34,7 @@ Button {
     background: buttonBackground
     Rectangle {
         id: buttonBackground
-        color: "#444444"
+        color: bgColor
         implicitWidth: 100
         implicitHeight: 40
         opacity: enabled ? 1 : 0.3
@@ -70,7 +71,7 @@ Button {
 
             PropertyChanges {
                 target: buttonBackground
-                color: "#555555"
+                color: bgColor
                 border.color: "#aaaaaa"
             }
 
