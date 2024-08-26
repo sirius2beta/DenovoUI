@@ -37,7 +37,8 @@ Button {
     Text {
         id: textItem
         text: control.text
-        font.family: "Segoe UI"
+        font.family: Constants.font.family
+        font.pixelSize: 12
         opacity: enabled ? 1.0 : 0.3
         color: "#047eff"
         horizontalAlignment: Text.AlignHCenter

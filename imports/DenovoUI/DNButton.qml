@@ -13,6 +13,7 @@ Button {
     id: control
 
     property bool showIcon: false
+    property int fontSize: 12
     property string iconSource: ""
     property string bgColor: "#444444"
 
@@ -54,14 +55,15 @@ Button {
 
     contentItem: textItem
     Text {
+        anchors.fill: parent
         id: textItem
         text: control.text
-        font.family: "Segoe UI"
+        font.family: Constants.font.family
+        font.pointSize: fontSize
         opacity: enabled ? 1.0 : 0.3
         color: "#ffffff"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        font.pointSize: 12
     }
 
     states: [

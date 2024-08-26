@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.15
 
 Item {
     id: root
-    width: 175
+    width: 200
     height: 320
     signal nextPage()
 
@@ -40,7 +40,7 @@ Item {
                     id: text1
                     x: 39
                     width: 116
-                    font.family: "Segoe UI"
+                    font.family: Constants.font.family
                     color: "#f3f3f3"
                     text: qsTr("BoatName")
 
@@ -57,8 +57,7 @@ Item {
                 id: text2
                 color: "#f3f3f3"
                 text: qsTr("Links")
-                font.family: "Segoe UI"
-
+                font.family: Constants.font.family
                 font.pixelSize: 12
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -90,14 +89,14 @@ Item {
                         Text {
                             color: "#1dd83b"
                             text: qsTr("P")
-                            font.family: "Segoe UI"
+                            font.family: Constants.font.family
                             font.pixelSize: 12
                         }
                         Text {
                             color: "#ffffff"
                             text: qsTr("192.168.0.11")
-                            font.family: "Segoe UI"
-                            font.pixelSize: 14
+                            font.family: Constants.font.family
+                            font.pixelSize: 16
                         }
                     }
                     RowLayout {
@@ -117,14 +116,15 @@ Item {
                         Text {
                             color: "#1dd83b"
                             text: qsTr("S")
-                            font.family: "Segoe UI"
+                            font.family: Constants.font.family
                             font.pixelSize: 12
                         }
                         Text {
                             color: "#ffffff"
                             text: qsTr("192.168.0.11")
-                            font.family: "Segoe UI"
-                            font.pixelSize: 14
+                            font.family: Constants.font.family
+                            font.pixelSize: 16
+                            font.styleName: "Regular"
                         }
                     }
                 }

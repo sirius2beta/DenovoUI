@@ -28,7 +28,8 @@ Item {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                font.pointSize: 12
+                font.family: Constants.font.family
+                font.pixelSize: 16
             }
             MouseArea{
                 anchors.fill: parent
@@ -49,7 +50,8 @@ Item {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                font.pointSize: 12
+                font.family: Constants.font.family
+                font.pixelSize: 16
             }
             MouseArea{
                 anchors.fill: parent

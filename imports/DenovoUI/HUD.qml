@@ -32,6 +32,7 @@ Item {
                     id: text1
                     y: 15
                     color: "#bcbcbc"
+                    font.family: Constants.font.family
                     text: "GS"
                     font.pixelSize: 14
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -42,6 +43,7 @@ Item {
                     width: 70
                     color: "#ffffff"
                     text: "1.00 m/s"
+                    font.family: Constants.font.family
                     font.pixelSize: 18
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WordWrap
@@ -71,6 +73,7 @@ Item {
                     y: 15
                     color: "#bcbcbc"
                     text: "Distance"
+                    font.family: Constants.font.family
                     font.pixelSize: 14
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
@@ -81,6 +84,7 @@ Item {
                     width: 70
                     color: "#ffffff"
                     text: "100 m"
+                    font.family: Constants.font.family
                     font.pixelSize: 18
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WordWrap
@@ -123,6 +127,7 @@ Item {
                     y: 15
                     color: "#bcbcbc"
                     text: "Depth"
+                    font.family: Constants.font.family
                     font.pixelSize: 14
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
@@ -133,6 +138,7 @@ Item {
                     width: 70
                     color: "#ffffff"
                     text: "1.2 m"
+                    font.family: Constants.font.family
                     font.pixelSize: 18
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WordWrap

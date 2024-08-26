@@ -60,5 +60,7 @@
 <file>./src/import_qml_components_plugins.h</file>
 <file>./src/import_qml_plugins.h</file>
 <file>./src/main.cpp</file>
+<file>./content/fonts/Roboto-Regular.ttf</file>
+<file>./imports/DenovoUI/font/Roboto-Regular.ttf</file>
 </qresource>
 </RCC>

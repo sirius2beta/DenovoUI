@@ -12,6 +12,7 @@ Item {
         anchors.fill: parent
         currentIndex: 0
         interactive: false
+        clip: true
         Rectangle{
             width: 200
             height: 350

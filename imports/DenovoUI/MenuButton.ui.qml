@@ -1,17 +1,18 @@
-﻿/*
+﻿
+
+/*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML. If you edit
 this file manually, you might introduce QML code that is not supported by Qt Design Studio.
 Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
 */
-
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 Button {
     id: control
     width: 80
-    height: 80
+    height: 100
 
     implicitWidth: Math.max(
                        buttonBackground ? buttonBackground.implicitWidth : 0,
@@ -44,6 +45,7 @@ Button {
         y: 45
         width: 72
         height: 29
+        font.family: Constants.font.family
         text: ""
 
         opacity: enabled ? 1.0 : 0.3
@@ -51,15 +53,15 @@ Button {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
     }
-    Text{
+    Text {
         id: text2
         y: 57
         width: 72
         height: 23
         text: control.text
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 0
-        font.family: "Segoe UI"
+        anchors.bottomMargin: 10
+        font.family: Constants.font.family
         opacity: enabled ? 1.0 : 0.3
         color: "#ffffff"
         horizontalAlignment: Text.AlignHCenter
@@ -72,7 +74,7 @@ Button {
         width: 50
         height: 50
         anchors.top: parent.top
-        anchors.topMargin: 4
+        anchors.topMargin: 10
         source: imgsrc
         anchors.horizontalCenter: parent.horizontalCenter
         fillMode: Image.PreserveAspectFit

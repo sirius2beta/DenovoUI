@@ -1,4 +1,4 @@
-pragma Singleton
+﻿pragma Singleton
 import QtQuick 2.15
 
 QtObject {
@@ -9,7 +9,7 @@ QtObject {
 
     /* Edit this comment to add your custom font */
     readonly property font font: Qt.font({
-                                             family: Qt.application.font.family,
+                                             family: "Segoe UI",
                                              pixelSize: Qt.application.font.pixelSize
                                          })
     readonly property font largeFont: Qt.font({
@@ -20,7 +20,5 @@ QtObject {
     readonly property color backgroundColor: "#c2c2c2"
 
 
-    property DirectoryFontLoader directoryFontLoader: DirectoryFontLoader {
-        id: directoryFontLoader
-    }
+
 }

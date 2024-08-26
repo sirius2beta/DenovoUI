@@ -20,7 +20,7 @@ Window {
 
     StatusView{
         id: statusView
-        width: 175
+        width: 200
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.bottom: statusBar.top

@@ -1,4 +1,4 @@
-Module DenovoUI
+﻿Module DenovoUI
 singleton Constants 1.0 Constants.qml
 EventListSimulator 1.0 EventListSimulator.qml
 EventListModel 1.0 EventListModel.qml
@@ -7,4 +7,5 @@ StatusBar 1.0 StatusBar.qml
 StatusView 1.0 StatusView.qml
 CentralView 1.0 CentralView.qml
 ControlView 1.0 ControlView.qml
+HUD 1.0 HUD.qml
 

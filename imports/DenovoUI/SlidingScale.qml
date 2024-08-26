@@ -39,6 +39,7 @@ Item {
 
                         color: "#ffffff"
                         text: (Math.round(currentHeading/10)*10-40+index*10)%360
+                        font.family: Constants.font.family
                         font.pixelSize: 12
                     }
 
@@ -144,12 +145,12 @@ Item {
         scale: 0.8
         Text {
             id: text1
-
             color: "#f900ff"
+            font.family: Constants.font.family
             text: currentHeading
             anchors.top: parent.top
             anchors.topMargin: 1
-            font.pixelSize: 18
+            font.pixelSize: 19
             anchors.horizontalCenter: parent.horizontalCenter
         }
 

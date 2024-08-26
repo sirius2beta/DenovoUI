@@ -34,7 +34,7 @@ Item {
         anchors.top: parent.top
         anchors.leftMargin: 10
         anchors.rightMargin: 30
-        anchors.topMargin: 25
+        anchors.topMargin: 29
         Rectangle {
             anchors.left: parent.left
             anchors.right: parent.right
@@ -101,8 +101,9 @@ Item {
         x: 9
         y: 0
         color: "#ffffff"
+        font.family: Constants.font.family
         text: title
-        font.pixelSize: 12
+        font.pixelSize: 14
     }
 
     Text {
@@ -110,10 +111,11 @@ Item {
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.rightMargin: 5
-        anchors.topMargin: 22
+        anchors.topMargin: 25
+        font.family: Constants.font.family
         color: "#ffffff"
         text: value
-        font.pixelSize: 12
+        font.pixelSize: 16
     }
 
 

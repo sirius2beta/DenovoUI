@@ -1,4 +1,4 @@
-import QtQuick 2.15
+﻿import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 Item {
@@ -24,6 +24,7 @@ Item {
                 color: "#ffffff"
                 text: qsTr("Winch Control")
                 font.pixelSize: 12
+                font.family: Constants.font.family
             }
             Rectangle{
                 id: rectangle2
@@ -75,6 +76,7 @@ Item {
                                                 text: (index)*5
                                                 horizontalAlignment: Text.AlignRight
                                                 font.pointSize: 14
+                                                font.family: Constants.font.family
                                             }
                                         }
 

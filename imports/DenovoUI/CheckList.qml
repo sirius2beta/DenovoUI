@@ -1,4 +1,4 @@
-import QtQuick 2.15
+﻿import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 Item {
@@ -22,6 +22,7 @@ Item {
             y: 8
             color: "#ffffff"
             text: qsTr("Check List")
+            font.family: Constants.font.family
             font.pixelSize: 12
         }
 

@@ -1,4 +1,4 @@
-import QtQuick 2.15
+﻿import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 Item {
@@ -20,6 +20,7 @@ Item {
             color: "#ffffff"
             text: qsTr("Video Control")
             font.pixelSize: 12
+            font.family: Constants.font.family
         }
 
         ListView {
@@ -102,7 +103,8 @@ Item {
                                 text: "High"
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
-                                font.pointSize: 12
+                                font.pixelSize: 12
+                                font.family: Constants.font.family
                             }
                             MouseArea{
                                 anchors.fill: parent
@@ -123,6 +125,7 @@ Item {
                                 text: "Mid"
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
+                                font.family: Constants.font.family
                                 font.pointSize: 12
                             }
                             MouseArea{
@@ -143,6 +146,7 @@ Item {
                                 text: "Low"
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
+                                font.family: Constants.font.family
                                 font.pointSize: 12
                             }
                             MouseArea{

@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.15
 
 Item {
     id: root
-    width: 175
+    width: 200
     height: 300
 
     Rectangle{
@@ -15,7 +15,7 @@ Item {
         ListModel {
             id: boatList
                 ListElement {
-                    boatname: "Red"
+                    boatname: "Red9"
                     PIP: "192.168.0.10"
                     SIP: "100.105.122.84"
                     PIPConnected: false
@@ -65,8 +65,9 @@ Item {
                             Text {
                                 width: 100
                                 color: "#ffffff"
+                                font.family: Constants.font.family
                                 text: boatname
-                                font.pointSize: 16
+                                font.pointSize: 14
                             }
                             Row{
                                 id: row
@@ -81,6 +82,7 @@ Item {
                                 Text {
                                     width: 100
                                     color: "#ffffff"
+                                    font.family: Constants.font.family
                                     text: PIP
                                 }
                             }
@@ -98,6 +100,7 @@ Item {
                                 Text {
                                     width: 100
                                     color: "#ffffff"
+                                    font.family: Constants.font.family
                                     text: SIP
                                 }
                             }
@@ -106,24 +109,25 @@ Item {
                         }
                     }
                     Column{
+                        spacing: -9
                         DNButton {
                             text: "Del"
-                            height: 20
+                            height: 35
                             width:30
+                            fontSize: 9
                             bgColor: "#990000"
-                            iconSource: "images/add.svg"
                         }
                         DNButton {
                             text: "A"
-                            height: 20
+                            fontSize: 9
+                            height: 35
                             width:30
                             bgColor: "#009900"
-                            iconSource: "images/add.svg"
                         }
                         DNButton {
                             showIcon: true
                             text: ""
-                            height: 20
+                            height: 35
                             width:30
                             iconSource: "images/settings.svg"
                         }

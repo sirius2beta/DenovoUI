@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.15
 
 Item {
     id: root
-    width: 175
+    width: 200
     height: 400
 
 
@@ -111,13 +111,15 @@ Item {
             Layout.preferredHeight: 250
             Layout.margins: 4
             Column{
+                id: column
                 ColumnLayout{
-                    width:160
+                    width:180
                     height:120
 
                     Rectangle{
                         id: rectangle1
                         color: "#1a1a1c"
+                        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                         Layout.fillHeight: true
                         Layout.fillWidth: true
                         RowLayout{
@@ -139,7 +141,7 @@ Item {
                                 Text {
                                     id: text2
                                     color: "#ffffff"
-
+                                    font.family: Constants.font.family
                                     text: qsTr("20.0 V")
                                     font.pixelSize: 14
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -151,13 +153,14 @@ Item {
 
                                     text: qsTr("2.0 A")
                                     font.pixelSize: 14
+                                    font.family: Constants.font.family
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
                                 }
                                 Text {
                                     id: text4
                                     color: "#ffffff"
-
+                                    font.family: Constants.font.family
                                     text: qsTr("80 %")
                                     font.pixelSize: 14
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -174,6 +177,7 @@ Item {
                 }
                 RowLayout{
                     width:160
+                    anchors.horizontalCenter: parent.horizontalCenter
 
                     BatteryBar{
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter

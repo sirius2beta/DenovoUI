@@ -17,8 +17,6 @@ Item {
 
     }
 
-
-
     Text {
         id: text1
         color: "#ffffff"
@@ -26,6 +24,7 @@ Item {
         anchors.top: parent.top
         anchors.topMargin: 8
         font.pixelSize: 12
+        font.family: Constants.font.family
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
