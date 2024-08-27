@@ -1,4 +1,4 @@
-import QtQuick 2.15
+﻿import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
@@ -6,6 +6,7 @@ Item {
     id: root
     width: 900
     height: 72
+    property real dist: 1.2
     Rectangle{
         id: rectangle3
         anchors.fill: parent
@@ -137,7 +138,7 @@ Item {
                     y: 15
                     width: 70
                     color: "#ffffff"
-                    text: "1.2 m"
+                    text: parseFloat(dist)+" m"
                     font.family: Constants.font.family
                     font.pixelSize: 18
                     horizontalAlignment: Text.AlignHCenter
