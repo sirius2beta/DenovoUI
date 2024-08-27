@@ -6,7 +6,10 @@ Item {
     id: root
     width: 900
     height: 72
-    property real dist: 1.2
+    property real dist: 0
+    property real volt: 0
+    property real amp: 0
+    property string rtk: "0"
     Rectangle{
         id: rectangle3
         anchors.fill: parent
@@ -115,6 +118,127 @@ Item {
                 Layout.preferredHeight: 45
                 Layout.preferredWidth: 1
             }
+
+            Column {
+                id: column5
+                x: 126
+                y: 14
+                width: 95
+                height: 43
+                spacing: 3
+                Text {
+                    id: rtk1
+                    y: 15
+                    color: "#bcbcbc"
+                    text: "RTK"
+                    font.family: Constants.font.family
+                    font.pixelSize: 14
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                Text {
+                    id: rtk2
+                    y: 15
+                    width: 70
+                    color: "#ffffff"
+                    text: {
+                        if(rtk == "0"){
+                            return "No GPS"
+                        }else if(rtk == "1"){
+                            return "No Fix"
+                        }else if(rtk == "2"){
+                            return "2D Fix"
+                        }else if(rtk == "3"){
+                            return "3D Fix"
+                        }else if(rtk == "4"){
+                            return "DGPS"
+                        }else if(rtk == "5"){
+                            return "RTK Float"
+                        }else if(rtk == "6"){
+                            return "RTK Fix"
+                        }else if(rtk == "7"){
+                            return "Static"
+                        }else if(rtk == "8"){
+                            return "PPP"
+                        }else{
+                            return "Err"
+                        }
+                    }
+
+                    font.family: Constants.font.family
+                    font.pixelSize: 18
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: Text.WordWrap
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+                Layout.preferredWidth: 100
+            }
+
+            Column {
+                id: column4
+                x: 126
+                y: 14
+                width: 95
+                height: 43
+                spacing: 3
+                Text {
+                    id: amp1
+                    y: 15
+                    color: "#bcbcbc"
+                    text: "Current"
+                    font.family: Constants.font.family
+                    font.pixelSize: 14
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                Text {
+                    id: amp2
+                    y: 15
+                    width: 70
+                    color: "#ffffff"
+                    text: parseFloat(amp)+" A"
+                    font.family: Constants.font.family
+                    font.pixelSize: 18
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: Text.WordWrap
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+                Layout.preferredWidth: 100
+            }
+
+            Column {
+                id: column3
+                x: 126
+                y: 14
+                width: 95
+                height: 43
+                spacing: 3
+                Text {
+                    id: volt1
+                    y: 15
+                    color: "#bcbcbc"
+                    text: "Voltage"
+                    font.family: Constants.font.family
+                    font.pixelSize: 14
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                Text {
+                    id: volt2
+                    y: 15
+                    width: 70
+                    color: "#ffffff"
+                    text: parseFloat(volt)+" v"
+                    font.family: Constants.font.family
+                    font.pixelSize: 18
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: Text.WordWrap
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+                Layout.preferredWidth: 100
+            }
+
+
 
             Column {
                 id: column2
