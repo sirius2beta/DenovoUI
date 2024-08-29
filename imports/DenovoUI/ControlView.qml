@@ -3,7 +3,7 @@ import QtQuick.Controls 2.15
 
 Item {
     id: root
-    width: 200
+    width: 300
     implicitHeight: 720
     Rectangle{
         anchors.fill: parent

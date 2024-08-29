@@ -13,7 +13,6 @@ Rectangle {
     width: Constants.width
     height: Constants.height
 
-    color: Constants.backgroundColor
 
     Text {
         text: qsTr("Hello DenovoUI")

@@ -11,7 +11,7 @@ import QtQuick.Controls 2.15
 
 Button {
     id: control
-    width: 80
+    width: 100
     height: 100
 
     implicitWidth: Math.max(
@@ -30,9 +30,10 @@ Button {
     background: buttonBackground
     Rectangle {
         id: buttonBackground
+        x: 0
+        y: -2
         color: "#00000000"
-        implicitWidth: 100
-        implicitHeight: 40
+        anchors.fill: parent
         opacity: enabled ? 1 : 0.3
         radius: 2
         border.color: "#ffffff"

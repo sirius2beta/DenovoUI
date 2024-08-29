@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.15
 
 Item {
     id: root
-    width: 200
+    width: 300
     height: 350
 
     SwipeView{
@@ -20,11 +20,11 @@ Item {
             border.color: "#565656"
             Column{
                 anchors.top: parent.top
-                anchors.topMargin: 10
-                spacing: 10
+                anchors.topMargin: 20
+                spacing: 15
                 anchors.horizontalCenter: parent.horizontalCenter
                 Row{
-                    spacing: 10
+                    spacing: 20
                     MenuButton{
                         imgsrc: "images/winch.png"
                         text: "Winch"
@@ -37,7 +37,7 @@ Item {
                     }
                 }
                 Row{
-                    spacing: 10
+                    spacing: 20
                     MenuButton{
                         imgsrc: "images/pump.png"
                         text: "Pump"
@@ -52,6 +52,15 @@ Item {
                     }
                 }
 
+            }
+
+            ComboBox {
+                id: comboBox
+                x: 40
+                y: 263
+                width: 146
+                height: 35
+                displayText: "RPM"
             }
 
         }

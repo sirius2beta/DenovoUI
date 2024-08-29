@@ -7,8 +7,8 @@ import DenovoUI 1.0
 
 Window {
     id: window
-    width: 1280
-    height: 720
+    width: 1440
+    height: 900
 
     visible: true
     title: "DenovoUI"
@@ -29,7 +29,7 @@ Window {
     ControlView{
         id: controlView
         x: 1080
-        width: 200
+        width: 300
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.bottom: statusBar.top
@@ -46,7 +46,7 @@ Window {
 
     CentralView{
         anchors.top: parent.top
-        anchors.left: statusView.right
+        anchors.left: parent.left
         anchors.right: controlView.left
         anchors.bottom: statusBar.top
     }
