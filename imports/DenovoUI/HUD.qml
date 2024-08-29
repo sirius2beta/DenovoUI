@@ -262,7 +262,7 @@ Item {
                     y: 15
                     width: 70
                     color: "#ffffff"
-                    text: parseFloat(dist)+" m"
+                    text: dist+" m"
                     font.family: Constants.font.family
                     font.pixelSize: 18
                     horizontalAlignment: Text.AlignHCenter

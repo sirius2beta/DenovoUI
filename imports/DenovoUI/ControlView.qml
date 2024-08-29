@@ -1,10 +1,11 @@
-import QtQuick 2.15
+﻿import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 Item {
     id: root
     width: 300
     implicitHeight: 720
+    property int batPercent2: 10
     Rectangle{
         anchors.fill: parent
         color: "#1a1a1c"
@@ -15,10 +16,11 @@ Item {
         id: controlMenu
 
     }
-    DataPanel{
+    BoatGaugePanel{
         id: dataPanel
         anchors.top: controlMenu.bottom
         anchors.bottom: parent.bottom
+        batPercent: 10
 
     }
 

@@ -1,4 +1,4 @@
-<!DOCTYPE RCC><RCC version="1.0">
+﻿<!DOCTYPE RCC><RCC version="1.0">
 <qresource>
 <file>./asset_imports/asset_imports.txt</file>
 <file>./content/App.qml</file>
@@ -14,6 +14,7 @@
 <file>./imports/DenovoUI/ControlMenu.qml</file>
 <file>./imports/DenovoUI/ControlView.qml</file>
 <file>./imports/DenovoUI/DataPanel.qml</file>
+<file>./imports/DenovoUI/DenovoBind.qml</file>
 <file>./imports/DenovoUI/DirectoryFontLoader.qml</file>
 <file>./imports/DenovoUI/DNButton.qml</file>
 <file>./imports/DenovoUI/EventListModel.qml</file>
