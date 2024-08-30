@@ -5,12 +5,12 @@ Item {
     id: root
     width: 640
     height: 480
-    property int rollAngle: 0
-    Rectangle{
-        color: "#1a1a1c"
-        anchors.fill: parent
+    property real rollAngle: 10
+    //Rectangle{
+    //    color: "#1a1a1c"
+    //    anchors.fill: parent
 
-    }
+    //}
     Rectangle{
         id: rectangle
         width: 200

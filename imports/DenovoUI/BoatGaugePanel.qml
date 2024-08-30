@@ -3,7 +3,11 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
 Item {
-    property int batPercent: 0
+    property int _totalBatteryPercentage: 0
+    property int _totalBatteryVoltage: 0
+    property int _totalBatteryCurrent: 0
+    property int _cabinTemp: 25
+
     id: root
     width: 300
     height: 400
@@ -19,6 +23,7 @@ Item {
         anchors.topMargin: 10
         anchors.rightMargin: 10
         anchors.leftMargin: 10
+        anchors.bottomMargin: 10
         clip: true
 
 
@@ -40,6 +45,7 @@ Item {
 
                     text: qsTr("CABIN")
                     font.pixelSize: 12
+                    font.family: Constants.font.family
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -58,7 +64,7 @@ Item {
 
             ValueBar{
                 title: "temperature"
-                value: 25
+                value: _cabinTemp
                 Layout.fillWidth: true
 
 
@@ -95,6 +101,7 @@ Item {
 
                     text: qsTr("BAT")
                     font.pixelSize: 12
+                    font.family: Constants.font.family
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -140,7 +147,7 @@ Item {
                                 BatteryBar{
                                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                                     noBattery: false
-                                    percentage: batPercent
+                                    percentage: _totalBatteryPercentage
 
                                 }
 
@@ -151,7 +158,7 @@ Item {
                                         id: text2
                                         color: "#ffffff"
                                         font.family: Constants.font.family
-                                        text: DenovoBind.TBatVolt + " V"
+                                        text: _totalBatteryVoltage/1000 + " V"
                                         font.pixelSize: 14
                                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
@@ -160,7 +167,7 @@ Item {
                                         id: text3
                                         color: "#ffffff"
 
-                                        text: DenovoBind.TBatCurrent + " A"
+                                        text: _totalBatteryCurrent/100 + " A"
                                         font.pixelSize: 14
                                         font.family: Constants.font.family
                                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -170,7 +177,8 @@ Item {
                                         id: text4
                                         color: "#ffffff"
                                         font.family: Constants.font.family
-                                        text: batPercent
+                                        text: _totalBatteryPercentage+" %"
+
                                         font.pixelSize: 14
                                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
@@ -190,7 +198,7 @@ Item {
 
                         BatteryBar{
                             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                            percentage: 80
+                            percentage: _totalBatteryPercentage
                             noBattery: false
                         }
                         BatteryBar{

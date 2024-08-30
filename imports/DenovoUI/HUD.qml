@@ -9,6 +9,7 @@ Item {
     property real dist: 0
     property real volt: 0
     property real amp: 0
+    property real yaw: 0
     property string rtk: "0"
     Rectangle{
         id: rectangle3
@@ -262,7 +263,7 @@ Item {
                     y: 15
                     width: 70
                     color: "#ffffff"
-                    text: dist+" m"
+                    text: dist+" cm"
                     font.family: Constants.font.family
                     font.pixelSize: 18
                     horizontalAlignment: Text.AlignHCenter
@@ -278,6 +279,7 @@ Item {
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 0
             anchors.horizontalCenter: parent.horizontalCenter
+            currentHeading: yaw
 
         }
 

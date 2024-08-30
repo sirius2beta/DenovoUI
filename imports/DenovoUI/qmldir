@@ -7,5 +7,6 @@ StatusBar 1.0 StatusBar.qml
 StatusView 1.0 StatusView.qml
 CentralView 1.0 CentralView.qml
 ControlView 1.0 ControlView.qml
+VideoView 1.0 VideoView.qml
 HUD 1.0 HUD.qml
 
