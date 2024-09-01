@@ -1,11 +1,21 @@
 ﻿import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
+import QtMultimedia 5.7
+
 
 Item {
     id: root
     width: 300
     height: 350
+    Audio {
+              id: playSound
+              source: "sound/click79.wav"
+              muted: true
+              onStopped: {
+                  muted = false
+              }
+          }
 
     SwipeView{
         id: swipeView
@@ -28,12 +38,20 @@ Item {
                     MenuButton{
                         imgsrc: "images/winch.png"
                         text: "Winch"
-                        onClicked: swipeView.currentIndex = 1
+                        onClicked: {
+
+                            swipeView.currentIndex = 1
+                            playSound.play()
+                        }
                     }
                     MenuButton{
                         imgsrc: "images/videocam.png"
                         text: "Video"
-                        onClicked: swipeView.currentIndex = 2
+                        onClicked: {
+
+                            swipeView.currentIndex = 2
+                            playSound.play()
+                        }
                     }
                 }
                 Row{
@@ -41,26 +59,23 @@ Item {
                     MenuButton{
                         imgsrc: "images/pump.png"
                         text: "Pump"
-                        onClicked: swipeView.currentIndex = 3
+                        onClicked: {
+                            playSound.play()
+                            swipeView.currentIndex = 3
+                        }
 
                     }
                     MenuButton{
                         imgsrc: "images/checklist.png"
                         text: "Check"
-                        onClicked: swipeView.currentIndex = 4
+                        onClicked: {
+                            playSound.play()
+                            swipeView.currentIndex = 4
+                        }
 
                     }
                 }
 
-            }
-
-            ComboBox {
-                id: comboBox
-                x: 40
-                y: 263
-                width: 146
-                height: 35
-                displayText: "RPM"
             }
 
         }
@@ -76,6 +91,13 @@ Item {
         CheckList{
             onHomePage: swipeView.currentIndex = 0
         }
+
+
+    }
+
+    Component.onCompleted: {
+
+        playSound.play()
 
 
     }

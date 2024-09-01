@@ -4,7 +4,7 @@ import QtQuick.Controls 2.15
 Item {
     id: root
     width: 160
-    height: 45
+    height: 60
 
     property string title: "title"
     property int minValue:0
@@ -27,7 +27,7 @@ Item {
 
     Rectangle {
         id: baseBar
-        height: 10
+        height: 15
         color: "#00000000"
         anchors.left: parent.left
         anchors.right: parent.right
@@ -46,7 +46,7 @@ Item {
         }
         Rectangle {
             id: greenBar
-            height:4
+            height:6
             x:(greenStart-minValue)/(maxValue-minValue) * baseBar.width
             width:(greenEnd-greenStart)/(maxValue-minValue)* baseBar.width
             color: "#00ff2f"
@@ -55,7 +55,7 @@ Item {
         }
         Rectangle {
             id: yellowBar
-            height:4
+            height:6
             x:(yellowStart-minValue)/(maxValue-minValue)  * baseBar.width
             width:(yellowEnd-yellowStart)/(maxValue-minValue)* baseBar.width
             color: "#fcff00"
@@ -65,7 +65,7 @@ Item {
 
         Rectangle {
             id: upperLimitPointer
-            height:8
+            height:12
             x:(upperLimit-minValue)/(maxValue-minValue)  * baseBar.width
             width:4
             color: "#ff0000"
@@ -86,8 +86,8 @@ Item {
             id: indicator
             x: (value-minValue)/(maxValue-minValue)* baseBar.width
             y: -10
-            width: 9
-            height: 16
+            width: 12
+            height: 18
             source: "images/indicator.png"
             fillMode: Image.PreserveAspectFit
         }
@@ -103,14 +103,14 @@ Item {
         color: "#ffffff"
         font.family: Constants.font.family
         text: title
-        font.pixelSize: 14
+        font.pixelSize: 16
     }
 
     Text {
         id: text2
         anchors.right: parent.right
         anchors.top: parent.top
-        anchors.rightMargin: 5
+        anchors.rightMargin: 10
         anchors.topMargin: 25
         font.family: Constants.font.family
         color: "#ffffff"

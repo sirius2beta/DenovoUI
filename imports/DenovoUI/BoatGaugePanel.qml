@@ -35,10 +35,11 @@ Item {
             spacing: 2
 
             Rectangle{
-                height:20
-                color: "#5b5b62"
+                height:25
+                color: "#53555f"
                 Layout.preferredHeight: 20
                 Layout.fillWidth: true
+                radius: 2
                 Text {
                     anchors.fill: parent
                     color: "#ffffff"
@@ -126,75 +127,64 @@ Item {
                 Layout.margins: 4
                 Column{
                     id: column
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    ColumnLayout{
-                        width:250
-                        height:120
+                    anchors.fill: parent
+                    anchors.leftMargin: 10
+                    anchors.rightMargin: 10
 
+                    RowLayout{
+                        height:120
+                        width:parent.width
                         Rectangle{
                             id: rectangle1
-                            color: "#1a1a1c"
-                            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                            Layout.fillHeight: true
                             Layout.fillWidth: true
-                            RowLayout{
-                                height: 100
+                            height:120
+                            color: "#3d3d3d"
+                            ColumnLayout{
                                 anchors.verticalCenter: parent.verticalCenter
                                 anchors.horizontalCenter: parent.horizontalCenter
-                                spacing: 10
-                                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                                Layout.fillWidth: true
-                                BatteryBar{
-                                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                                    noBattery: false
-                                    percentage: _totalBatteryPercentage
+                                anchors.margins: 4
+
+                                Text {
+                                    color: "#ffffff"
+                                    font.family: Constants.font.family
+                                    text: "Total "
+                                    font.pixelSize: 16
+                                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
                                 }
+                                Text {
+                                    id: text2
+                                    color: "#ffffff"
+                                    font.family: Constants.font.family
+                                    text: _totalBatteryVoltage/1000 + " V"
+                                    font.pixelSize: 16
+                                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
-                                ColumnLayout{
-                                    Layout.fillWidth: false
-                                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                                    Text {
-                                        id: text2
-                                        color: "#ffffff"
-                                        font.family: Constants.font.family
-                                        text: _totalBatteryVoltage/1000 + " V"
-                                        font.pixelSize: 14
-                                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                                }
+                                Text {
+                                    id: text3
+                                    color: "#ffffff"
 
-                                    }
-                                    Text {
-                                        id: text3
-                                        color: "#ffffff"
+                                    text: _totalBatteryCurrent/100 + " A"
+                                    font.pixelSize: 16
+                                    font.family: Constants.font.family
+                                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
-                                        text: _totalBatteryCurrent/100 + " A"
-                                        font.pixelSize: 14
-                                        font.family: Constants.font.family
-                                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-
-                                    }
-                                    Text {
-                                        id: text4
-                                        color: "#ffffff"
-                                        font.family: Constants.font.family
-                                        text: _totalBatteryPercentage+" %"
-
-                                        font.pixelSize: 14
-                                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-
-                                    }
+                                }
+                                Text {
+                                    id: text4
+                                    color: "#ffffff"
+                                    font.family: Constants.font.family
+                                    text: _totalBatteryPercentage+" %"
+                                    font.pixelSize: 16
+                                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
                                 }
 
                             }
-
                         }
 
 
-                    }
-                    RowLayout{
-                        width:160
-                        anchors.horizontalCenter: parent.horizontalCenter
 
                         BatteryBar{
                             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
