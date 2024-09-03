@@ -61,6 +61,7 @@ Button {
         height: 23
         text: control.text
         anchors.bottom: parent.bottom
+        font.pixelSize: 16
         anchors.bottomMargin: 10
         font.family: Constants.font.family
         opacity: enabled ? 1.0 : 0.3

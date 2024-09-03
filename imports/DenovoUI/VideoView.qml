@@ -67,6 +67,7 @@ Item {
                                 font.family: Constants.font.family
                                 style: Text.Outline
                                 text: -index*10+20+Math.sign(pitch) * Math.floor(Math.abs(pitch/10))*10
+                                font.pixelSize: 14
                                 font.bold: true
                             }
 
