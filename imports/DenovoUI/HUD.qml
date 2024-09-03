@@ -34,7 +34,7 @@ Item {
     
     Audio {
               id: alarmSound3
-              source: "sound/alarm3.mp3"
+              source: "sound/alarm4.wav"
               loops: Audio.Infinite
               muted: !Constants.cabinTAlarm
     }

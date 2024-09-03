@@ -59,6 +59,7 @@
         <file>imports/DenovoUI/sound/click79.wav</file>
         <file>imports/DenovoUI/sound/warning1.mp3</file>
         <file>imports/DenovoUI/sound/alarm2.wav</file>
+        <file>imports/DenovoUI/sound/alarm4.wav</file>
         <file>insight</file>
         <file>main.qml</file>
         <file>qmlcomponents</file>
