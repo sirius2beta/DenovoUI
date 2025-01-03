@@ -17,6 +17,34 @@ Item {
     property real gs:0
     property real dtm:0
     property string rtk: "0"
+    property real boat_rssi:-1000
+    property real ground_rssi:0
+    property real tx_strength: {
+        if(ground_rssi>-81){
+            return 4
+        }else if(ground_rssi>-91){
+            return 3
+        }else if(ground_rssi>-101){
+            return 2
+        }else if(ground_rssi>-110){
+            return 1
+        }
+        return 0
+    }
+    property real rx_strength: {
+        if(boat_rssi>-81){
+            return 4
+        }else if(boat_rssi>-91){
+            return 3
+        }else if(boat_rssi>-101){
+            return 2
+        }else if(boat_rssi>-110){
+            return 1
+        }
+        return 0
+    }
+    FontLoader { source: "font/Roboto-Black.ttf" }
+    FontLoader { source: "font/Roboto-Regular.ttf" }
 
     Audio {
               id: alarmSound1
@@ -67,9 +95,10 @@ Item {
                     id: text1
                     y: 15
                     color: "#bcbcbc"
-                    font.family: Constants.font.family
+                    font.family: "roboto"
                     text: "GS"
                     font.pixelSize: 14
+
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
                 Text {
@@ -78,20 +107,21 @@ Item {
                     width: 70
                     color: "#ffffff"
                     text: gs+ " m/s"
-                    font.family: Constants.font.family
+                    font.family: "roboto black"
                     font.pixelSize: 18
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WordWrap
+                    font.styleName: "Bold"
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
 
             }
 
             Rectangle {
-                id: rectangle
-                width: 1
+                width: 2
                 height: 45
-                color: "#434343"
+                color: "#555555"
+                Layout.preferredHeight: 45
                 Layout.preferredWidth: 1
             }
 
@@ -108,7 +138,7 @@ Item {
                     y: 15
                     color: "#bcbcbc"
                     text: "Distance"
-                    font.family: Constants.font.family
+                    font.family: "roboto"
                     font.pixelSize: 14
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
@@ -119,7 +149,7 @@ Item {
                     width: 70
                     color: "#ffffff"
                     text: dtm+" m"
-                    font.family: Constants.font.family
+                    font.family: "roboto black"
                     font.pixelSize: 18
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WordWrap
@@ -128,10 +158,9 @@ Item {
             }
 
             Rectangle {
-                id: rectangle1
-                width: 1
+                width: 2
                 height: 45
-                color: "#434343"
+                color: "#555555"
                 Layout.preferredHeight: 45
                 Layout.preferredWidth: 1
             }
@@ -140,12 +169,85 @@ Item {
                 Layout.fillWidth: true
 
             }
+            Rectangle {
+                width: 15
+                height: 45
+                color: "#222222"
+                Layout.preferredHeight: 45
+                Layout.preferredWidth: 15
+                Text{
+                    anchors.fill: parent
+                    color: "#ffffff"
+                    text: "全\n波"
+                    font.family: Constants.font.family
+                    font.pixelSize: 14
+                }
+            }
+            Item {
+                id: name
+                width: 55
+                height: 45
+
+
+                Rectangle{
+                    anchors.fill: parent
+                    color: "#00ffffff"
+                    border.color: "#00666666"
+                    Column{
+                        anchors.fill: parent
+                        spacing: 10
+                        RowLayout{
+
+                            spacing: 4
+                            Text{
+                                color: "#ffffff"
+                                text: "Rx"
+                                font.family: "roboto"
+                                font.pixelSize: 14
+                            }
+                            Repeater{
+                                model:4
+                                Rectangle{
+                                    Layout.alignment: Qt.AlignBottom
+                                    width: 4
+                                    height: 4+index*4
+                                    color: index >= rx_strength?"#555555":"#00ff01"
+
+                                }
+                            }
+                        }
+                        RowLayout{
+                            spacing: 4
+                            Text{
+                                color: "#ffffff"
+                                text: "Tx"
+                                font.family: "roboto"
+                                font.pixelSize: 14
+                            }
+                            Repeater{
+                                model:4
+                                Rectangle{
+                                    Layout.alignment: Qt.AlignBottom
+                                    width: 4
+                                    height: 4+index*4
+                                    color: index >= tx_strength?"#555555":"#00ff01"
+
+                                }
+                            }
+                        }
+                    }
+
+
+
+                }
+            }
+
 
             Rectangle {
-                id: rectangle2
-                width: 1
+                id: rectangle1
+                width: 2
                 height: 45
-                color: "#434343"
+                color: "#555555"
                 Layout.preferredHeight: 45
                 Layout.preferredWidth: 1
             }
@@ -166,7 +268,7 @@ Item {
                         y: 16
                         color: "#bcbcbc"
                         text: "RTK"
-                        font.family: Constants.font.family
+                        font.family: "roboto"
                         font.pixelSize: 16
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
@@ -209,6 +311,13 @@ Item {
                     Layout.preferredWidth: 100
                 }
             }
+            Rectangle {
+                width: 2
+                height: 45
+                color: "#555555"
+                Layout.preferredHeight: 45
+                Layout.preferredWidth: 1
+            }
 
             Rectangle {
                 width: 1
@@ -225,9 +334,9 @@ Item {
                     Text {
                         id: temp1
                         y: 15
-                        color: "#bcbcbc"
+                        color: temp>Constants.cabinTU?"#ffffff":"#bcbcbc"
                         text: "Cabin Temp"
-                        font.family: Constants.font.family
+                        font.family: "roboto"
                         font.pixelSize: 16
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
@@ -238,7 +347,7 @@ Item {
                         width: 70
                         color: "#ffffff"
                         text: parseFloat(temp)+" C"
-                        font.family: Constants.font.family
+                        font.family: "roboto black"
                         font.pixelSize: 18
                         horizontalAlignment: Text.AlignHCenter
                         wrapMode: Text.WordWrap
@@ -287,15 +396,21 @@ Item {
                 }
 
             }
+            Rectangle {
+                width: 2
+                height: 45
+                color: "#555555"
+                Layout.preferredHeight: 45
+                Layout.preferredWidth: 1
+            }
+
 
             Rectangle {
                 width: 1
                 height: 45
-                color: volt<Constants.voltLL?"#66ff0000":"#00000000"
+                color: "#00000000"
                 Layout.preferredHeight: 70
                 Layout.preferredWidth: 95
-
-
                 Column {
                     id: column3
                     y: 10
@@ -306,9 +421,9 @@ Item {
                     Text {
                         id: volt1
                         y: 16
-                        color: "#bcbcbc"
+                        color: volt<Constants.voltLL?"#ffffff":"#bcbcbc"
                         text: "Voltage"
-                        font.family: Constants.font.family
+                        font.family: "roboto"
                         font.pixelSize: 16
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
@@ -317,12 +432,14 @@ Item {
                         id: volt2
                         y: 18
                         width: 70
-                        color: "#ffffff"
+                        color: volt<Constants.voltLL?"#ff0000":"#ffffff"
                         text: parseFloat(volt)+" v"
-                        font.family: Constants.font.family
+                        font.family: "roboto black"
                         font.pixelSize: 18
                         horizontalAlignment: Text.AlignHCenter
                         wrapMode: Text.WordWrap
+                        font.italic: false
+                        font.bold: false
                         anchors.horizontalCenter: parent.horizontalCenter
                         onTextChanged: {
                             if(volt<Constants.voltLL ){
@@ -369,12 +486,18 @@ Item {
                 }
             }
 
-
+            Rectangle {
+                width: 2
+                height: 45
+                color: "#555555"
+                Layout.preferredHeight: 45
+                Layout.preferredWidth: 1
+            }
 
             Rectangle {
                 width: 1
                 height: 45
-                color: depth<Constants.depthLL?"#7bffe000":"#00000000"
+                color: "#00000000"
                 Layout.preferredHeight: 70
                 Layout.preferredWidth: 95
                 Column {
@@ -386,9 +509,9 @@ Item {
                     Text {
                         id: text5
                         y: 16
-                        color: "#bcbcbc"
+                        color: depth<Constants.depthLL?"#ffffff":"#bcbcbc"
                         text: "Depth"
-                        font.family: Constants.font.family
+                        font.family: "roboto"
                         font.pixelSize: 14
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
@@ -397,9 +520,9 @@ Item {
                         id: text6
                         y: 15
                         width: 70
-                        color: "#ffffff"
+                        color: depth<Constants.depthLL?"#ff0000":"#ffffff"
                         text: depth+" cm"
-                        font.family: Constants.font.family
+                        font.family: "roboto black"
                         font.pixelSize: 18
                         horizontalAlignment: Text.AlignHCenter
                         wrapMode: Text.WordWrap
@@ -450,15 +573,16 @@ Item {
         }
 
 
-        SlidingScale{
-            opacity: 1
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 0
-            anchors.horizontalCenter: parent.horizontalCenter
-            currentHeading: yaw
 
-        }
 
+
+    }
+    SlidingScale{
+        opacity: 1
+        anchors.top: parent.bottom
+        anchors.bottomMargin: 0
+        anchors.horizontalCenter: parent.horizontalCenter
+        currentHeading: yaw
 
     }
 }

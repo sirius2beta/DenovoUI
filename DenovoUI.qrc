@@ -71,5 +71,7 @@
         <file>src/main.cpp</file>
         <file>content/fonts/Roboto-Regular.ttf</file>
         <file>imports/DenovoUI/font/Roboto-Regular.ttf</file>
+        <file>imports/DenovoUI/font/Roboto-Bold.ttf</file>
+        <file>imports/DenovoUI/font/Roboto-Black.ttf</file>
     </qresource>
 </RCC>
