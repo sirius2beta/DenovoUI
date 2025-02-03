@@ -72,7 +72,7 @@ Item {
     Rectangle{
         id: rectangle3
         anchors.fill: parent
-        color: "#1a1a1c"
+        color: "#2f2f33"
         border.color: "#565656"
 
 
@@ -186,7 +186,7 @@ Item {
             Item {
                 id: name
                 width: 55
-                height: 45
+                height: 50
 
 
                 Rectangle{
@@ -236,8 +236,34 @@ Item {
                             }
                         }
                     }
-
-
+                    Popup{
+                        id: popup4
+                        y:parent.height
+                        width:200
+                        height:300
+                        modal:true
+                        focus: true
+                        padding:0
+                        leftInset: 0
+                        AlarmSettings{
+                            id:alarmsettings4
+                            anchors.fill:parent
+                            enableUpper: false
+                            lowerValue: Constants.voltLL
+                            alarmOn: Constants.voltAlarm
+                            onSave: {
+                                Constants.voltLL = lowerValue
+                                Constants.voltAlarm = alarmOn
+                                popup.close()
+                            }
+                        }
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked:{
+                            popup4.open()
+                        }
+                    }
 
                 }
             }
@@ -347,7 +373,7 @@ Item {
                         width: 70
                         color: "#ffffff"
                         text: parseFloat(temp)+" C"
-                        font.family: "roboto black"
+                        font.family: "roboto"
                         font.pixelSize: 18
                         horizontalAlignment: Text.AlignHCenter
                         wrapMode: Text.WordWrap
@@ -406,9 +432,10 @@ Item {
 
 
             Rectangle {
+                id:voltageBox
                 width: 1
                 height: 45
-                color: "#00000000"
+                color: volt<Constants.voltLL?"#99ff0000":"#00000000"
                 Layout.preferredHeight: 70
                 Layout.preferredWidth: 95
                 Column {
@@ -421,7 +448,7 @@ Item {
                     Text {
                         id: volt1
                         y: 16
-                        color: volt<Constants.voltLL?"#ffffff":"#bcbcbc"
+                        color: "#bcbcbc"
                         text: "Voltage"
                         font.family: "roboto"
                         font.pixelSize: 16
@@ -432,9 +459,9 @@ Item {
                         id: volt2
                         y: 18
                         width: 70
-                        color: volt<Constants.voltLL?"#ff0000":"#ffffff"
+                        color: "#ffffff"
                         text: parseFloat(volt)+" v"
-                        font.family: "roboto black"
+                        font.family: "roboto"
                         font.pixelSize: 18
                         horizontalAlignment: Text.AlignHCenter
                         wrapMode: Text.WordWrap
@@ -484,6 +511,19 @@ Item {
                         popup.open()
                     }
                 }
+
+
+                SequentialAnimation {
+                    running: volt<Constants.voltLL
+                    loops: Animation.Infinite
+                    PropertyAnimation {target: voltageBox; property: "color"; from: "#00ff0000"; to: "#99ff0000"; duration: 500 }
+                    PauseAnimation { duration: 500 }
+                    PropertyAnimation {target: voltageBox; property: "color"; from: "#99ff0000"; to: "#00ff0000"; duration: 500 }
+                }
+
+
+
+
             }
 
             Rectangle {
@@ -495,9 +535,10 @@ Item {
             }
 
             Rectangle {
+                id: depthBox
                 width: 1
                 height: 45
-                color: "#00000000"
+                color: depth<Constants.depthLL?"#99ff0000":"#00000000"
                 Layout.preferredHeight: 70
                 Layout.preferredWidth: 95
                 Column {
@@ -509,7 +550,7 @@ Item {
                     Text {
                         id: text5
                         y: 16
-                        color: depth<Constants.depthLL?"#ffffff":"#bcbcbc"
+                        color: "#bcbcbc"
                         text: "Depth"
                         font.family: "roboto"
                         font.pixelSize: 14
@@ -520,9 +561,9 @@ Item {
                         id: text6
                         y: 15
                         width: 70
-                        color: depth<Constants.depthLL?"#ff0000":"#ffffff"
+                        color: "#ffffff"
                         text: depth+" cm"
-                        font.family: "roboto black"
+                        font.family: "roboto"
                         font.pixelSize: 18
                         horizontalAlignment: Text.AlignHCenter
                         wrapMode: Text.WordWrap
@@ -567,6 +608,14 @@ Item {
                     onClicked:{
                         popup3.open()
                     }
+                }
+
+                SequentialAnimation {
+                    running: depth<Constants.depthLL
+                    loops: Animation.Infinite
+                    PropertyAnimation {target: depthBox; property: "color"; from: "#00ff0000"; to: "#99ff0000"; duration: 500 }
+                    PauseAnimation { duration: 500 }
+                    PropertyAnimation {target: depthBox; property: "color"; from: "#99ff0000"; to: "#00ff0000"; duration: 500 }
                 }
 
             }

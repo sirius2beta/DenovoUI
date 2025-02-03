@@ -7,7 +7,7 @@ import QtMultimedia 5.7
 Item {
     id: root
     width: 300
-    height: 350
+    height: 400
     Audio {
               id: playSound
               source: "sound/click79.wav"

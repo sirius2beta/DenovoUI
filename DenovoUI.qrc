@@ -21,6 +21,7 @@
         <file>imports/DenovoUI/EventListModel.qml</file>
         <file>imports/DenovoUI/EventListSimulator.qml</file>
         <file>imports/DenovoUI/HUD.qml</file>
+        <file>imports/DenovoUI/DNValueEdit.qml</file>
         <file>imports/DenovoUI/images/.DS_Store</file>
         <file>imports/DenovoUI/images/1x/.DS_Store</file>
         <file>imports/DenovoUI/images/add.svg</file>
@@ -37,12 +38,15 @@
         <file>imports/DenovoUI/images/nobattery.png</file>
         <file>imports/DenovoUI/images/power.png</file>
         <file>imports/DenovoUI/images/pump.png</file>
+        <file>imports/DenovoUI/images/play_arrow.png</file>
+        <file>imports/DenovoUI/images/link.png</file>
         <file>imports/DenovoUI/images/settings.svg</file>
         <file>imports/DenovoUI/images/stop.png</file>
         <file>imports/DenovoUI/images/up.png</file>
         <file>imports/DenovoUI/images/videocam.png</file>
         <file>imports/DenovoUI/images/vOption.svg</file>
         <file>imports/DenovoUI/images/winch.png</file>
+        <file>imports/DenovoUI/images/navigation.png</file>
         <file>imports/DenovoUI/MenuButton.ui.qml</file>
         <file>imports/DenovoUI/MultiBoatPanel.qml</file>
         <file>imports/DenovoUI/PumpControl.qml</file>
