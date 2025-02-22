@@ -106,9 +106,10 @@ Item {
                 ScrollView{
                     anchors.fill:parent
                     contentWidth: parent.width
-                    contentHeight: 1500
+                    contentHeight: 1600
                     ColumnLayout{
                         anchors.fill: parent
+                        anchors.rightMargin: 20
                         BoatStatusView{
                             Layout.fillWidth: true
                         }

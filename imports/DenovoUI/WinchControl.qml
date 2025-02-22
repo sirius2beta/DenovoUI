@@ -8,7 +8,7 @@ import DeNovoViewer 1.0
 Item {
     id: root
     width: 300
-    height: 400
+    height: 700
 
     property real targetStep: 0
 
@@ -45,7 +45,7 @@ Item {
             anchors.right: parent.right
             height:60
             onClicked: {
-                root.homePage()
+                root.parent.source = ""
             }
         }
     }
@@ -58,7 +58,7 @@ Item {
         anchors.bottom: parent.bottom
 
         clip: parent.width
-        contentHeight: 500
+        contentHeight: 700
         contentWidth: parent.width
 
 
@@ -88,18 +88,52 @@ Item {
                     height:60
                     radius:10
                     color: "#333333"
+                    Text {
+                        anchors.fill: parent
+                        color: "#ffffff"
+                        text: DeNovoViewer.controlManager.controls.get(0).steps.toString()
+                        font.pixelSize: 18
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font.family: Constants.font.family
+                    }
                     RowLayout{
                         anchors.fill: parent
-                        Text {
-                            color: "#ffffff"
+                        Rectangle{
+                            height:30
+                            color: "#009ddc"
                             Layout.fillHeight: true
-                            Layout.fillWidth: true
-                            text: DeNovoViewer.controlManager.controls.get(0).steps.toString()
-                            font.pixelSize: 18
-                            horizontalAlignment: Text.AlignHCenter
-                            verticalAlignment: Text.AlignVCenter
-                            font.family: Constants.font.family
+                            width:60
+                            radius: 15
+                            Text {
+                                anchors.fill: parent
+                                color: "#ffffff"
+
+                                text: qsTr("reset")
+                                font.pixelSize: 18
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                font.family: Constants.font.family
+                            }
+                            MouseArea{
+                                anchors.fill: parent
+                                onPressed: {
+                                    DeNovoViewer.controlManager.controls.get(0).reset()
+                                    parent.color = '#999999'
+
+                                }
+                                onReleased:  {
+                                    parent.color = "#009ddc"
+
+                                }
+                            }
+
                         }
+                        Rectangle{
+                            Layout.fillWidth: true
+
+                        }
+
                         ColumnLayout{
                             Rectangle{
                                 width:80
@@ -155,7 +189,7 @@ Item {
 
                 Rectangle{
                     height:60
-                    color: "#636363"
+                    color: "#009ddc"
                     Layout.fillWidth: true
                     radius: 30
                     Text {
@@ -172,6 +206,36 @@ Item {
                         anchors.fill: parent
                         onPressed: {
                             DeNovoViewer.controlManager.controls.get(0).run(targetStep)
+                            parent.color = '#999999'
+
+                        }
+                        onReleased:  {
+                            parent.color = "#009ddc"
+
+                        }
+                    }
+
+                }
+
+                Rectangle{
+                    height:60
+                    color: "#636363"
+                    Layout.fillWidth: true
+                    radius: 30
+                    Text {
+                        anchors.fill: parent
+                        color: "#ffffff"
+
+                        text: qsTr("Stop")
+                        font.pixelSize: 18
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font.family: Constants.font.family
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        onPressed: {
+                            DeNovoViewer.controlManager.controls.get(0).stop()
                             parent.color = '#999999'
 
                         }
@@ -317,7 +381,7 @@ Item {
 
                 Text {
                     color: "#ffffff"
-                    text: qsTr("Speed")
+                    text: qsTr("Max Speed")
                     font.pixelSize: 18
                     font.family: Constants.font.family
                     Layout.alignment: Qt.AlignHCenter
