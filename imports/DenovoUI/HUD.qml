@@ -45,7 +45,7 @@ Item {
     }
     FontLoader { source: "font/Roboto-Black.ttf" }
     FontLoader { source: "font/Roboto-Regular.ttf" }
-
+/*
     Audio {
               id: alarmSound1
               source: "sound/warning1.mp3"
@@ -67,7 +67,7 @@ Item {
               muted: !Constants.cabinTAlarm
     }
 
-
+*/
 
     Rectangle{
         id: rectangle3
